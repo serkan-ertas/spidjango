@@ -1,2 +1,4 @@
 .idea/*
-djangoapp/spider/_pycache_/*
+djangoapp/spider/__pycache__/*
+djangoapp/spider/migrations/*
+djangoapp/djangoapp/__pycache__/*
