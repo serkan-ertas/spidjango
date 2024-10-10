@@ -3,3 +3,4 @@ djangoapp/spider/__pycache__/*
 djangoapp/spider/migrations/*
 djangoapp/djangoapp/__pycache__/*
 djangoapp/db.sqlite3
+utils/__pycache__/*
