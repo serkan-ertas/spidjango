@@ -1,10 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>SPIDERS HOME</title>
+    <meta charset="UTF-8">
+    <title>SPIDERS HOME</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Set a nice font for the body */
+            background-color: #f9f9f9; /* Light background color */
+            margin: 0; /* Remove default margin */
+            padding: 20px; /* Add some padding around the content */
+        }
+
+        h1 {
+            color: #333; /* Darker color for the heading */
+            text-align: center; /* Center the heading */
+        }
+
+        a {
+            font-size: 18px; /* Larger font size for links */
+            color: #4CAF50; /* Green color for links */
+            text-decoration: none; /* Remove underline from links */
+            display: block; /* Make the link a block element */
+            text-align: center; /* Center the text in the link */
+            margin-bottom: 20px; /* Space between links */
+        }
+
+        .button {
+            background-color: #4CAF50; /* Green background for buttons */
+            border: none; /* No border */
+            color: white; /* White text color */
+            padding: 15px 32px; /* Padding for the button */
+            text-align: center; /* Center text in the button */
+            text-decoration: none; /* Remove underline from button text */
+            display: inline-block; /* Allow buttons to be inline */
+            font-size: 16px; /* Font size for button text */
+            margin: 4px 2px; /* Space between buttons */
+            cursor: pointer; /* Change cursor to pointer on hover */
+            border-radius: 4px; /* Rounded corners for buttons */
+            transition: background-color 0.3s; /* Smooth background transition */
+        }
+
+        .button:hover {
+            background-color: #45a049; /* Darker green on hover */
+        }
+
+        form {
+            display: inline-block; /* Align forms inline */
+            margin: 0; /* Remove default margin */
+        }
+    </style>
 </head>
 <body>
-	<a>THERE ARE LOTS OF SPIDERS HERE!</a>
+    <h1>Spiders Home</h1>
+    <a>THERE ARE LOTS OF SPIDERS HERE!</a><br>
+
+    {% for spider in spiders %}
+        <form action="/spiders/{{ spider }}/" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="button">Run {{ spider }}</button>
+        </form><br>
+    {% endfor %}
 </body>
 </html>
